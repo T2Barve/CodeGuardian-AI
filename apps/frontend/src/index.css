@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-void: #090c15;
+    --bg-cosmic: #13112c;
+    --bg-indigo: #1c133a;
+    --text-stellar: #e2f1ff;
+    --accent-violet: #8a2be2;
+    --accent-plasma: #ff1493;
+    --accent-cyan: #00f0ff;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #090c15;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(138, 43, 226, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(255, 20, 147, 0.09) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+    color: #e2f1ff;
+    min-height: 100vh;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090c15;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #251c4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44327e;
+}
+
+.glass-panel {
+  background: rgba(20, 16, 46, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card {
+  background: rgba(18, 15, 38, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(138, 43, 226, 0.45);
+  box-shadow: 0 8px 28px -4px rgba(138, 43, 226, 0.22), 0 0 12px 0 rgba(255, 20, 147, 0.12);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(12, 10, 28, 0.85);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  color: #e2f1ff;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  border-color: #8a2be2;
+  box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.35), 0 0 15px rgba(255, 20, 147, 0.2);
+  outline: none;
+}
+
+.plasma-gradient-text {
+  background: linear-gradient(135deg, #00f0ff 0%, #8a2be2 50%, #ff1493 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plasma-btn {
+  background: linear-gradient(135deg, #8a2be2 0%, #ff1493 100%);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(138, 43, 226, 0.35);
+}
+
+.plasma-btn:hover {
+  box-shadow: 0 6px 24px rgba(255, 20, 147, 0.5), 0 0 12px rgba(0, 240, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.plasma-btn:active {
+  transform: translateY(1px);
+}
+
+.pulse-glow {
+  animation: plasmaPulse 3s infinite alternate;
+}
+
+@keyframes plasmaPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 24px rgba(255, 20, 147, 0.55), 0 0 10px rgba(0, 240, 255, 0.35);
+  }
+}
+
